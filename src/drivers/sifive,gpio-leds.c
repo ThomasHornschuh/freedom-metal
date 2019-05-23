@@ -31,7 +31,7 @@ void __metal_driver_led_on (struct metal_led *led)
     struct __metal_driver_sifive_gpio_led *_led = (void *)(led);
 
     if (_led->gpio != NULL) {
-        metal_gpio_set_pin((struct metal_gpio *) _led->gpio, _led->pin, 1);
+        metal_gpio_set_pin((struct metal_gpio *) _led->gpio, _led->pin, 0); // TH
     }
 }
 
@@ -40,7 +40,7 @@ void __metal_driver_led_off (struct metal_led *led)
     struct __metal_driver_sifive_gpio_led *_led = (void *)(led);
 
     if (_led->gpio != NULL) {
-        metal_gpio_set_pin((struct metal_gpio *) _led->gpio, _led->pin, 0);
+        metal_gpio_set_pin((struct metal_gpio *) _led->gpio, _led->pin, 1); //TH
     }
 }
 
